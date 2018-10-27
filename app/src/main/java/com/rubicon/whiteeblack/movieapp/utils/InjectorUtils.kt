@@ -10,34 +10,34 @@ import com.rubicon.whiteeblack.movieapp.ui.searchmovies.SearchMoviesViewModelFac
 import com.rubicon.whiteeblack.movieapp.ui.tvshows.TvShowViewModelFactory
 
 object InjectorUtils {
-    private fun getMovieRepository() : MovieRepository
-    {
+
+    // dependency in
+
+    private fun getMovieRepository(): MovieRepository {
         return MovieRepository.getInstance(ApiService.create())
     }
-    private fun getTvShowRepository() : TvShowRepository
-    {
+
+    private fun getTvShowRepository(): TvShowRepository {
         return TvShowRepository.getInstance(ApiService.create())
     }
 
-    fun provideMoviesViewModelFactory() : MoviesViewModelFactory
-    {
+    fun provideMoviesViewModelFactory(): MoviesViewModelFactory {
         return MoviesViewModelFactory(getMovieRepository())
     }
-    fun provideTvShowViewModelFactory() : TvShowViewModelFactory
-    {
+
+    fun provideTvShowViewModelFactory(): TvShowViewModelFactory {
         return TvShowViewModelFactory(getTvShowRepository())
     }
-    fun provideSearchTvShowsViewModelFactory() : SearchTvShowsViewModelFactory
-    {
+
+    fun provideSearchTvShowsViewModelFactory(): SearchTvShowsViewModelFactory {
         return SearchTvShowsViewModelFactory(getTvShowRepository())
     }
 
-    fun provideSearchMoviewViewModelFactory() : SearchMoviesViewModelFactory
-    {
+    fun provideSearchMoviewViewModelFactory(): SearchMoviesViewModelFactory {
         return SearchMoviesViewModelFactory(getMovieRepository())
     }
-    fun provideDetailViewModelFactory(title : String,imageUrl : String,description : String) : DetailViewModelFactory
-    {
+
+    fun provideDetailViewModelFactory(title: String, imageUrl: String, description: String): DetailViewModelFactory {
         return DetailViewModelFactory(title, imageUrl, description)
     }
 }

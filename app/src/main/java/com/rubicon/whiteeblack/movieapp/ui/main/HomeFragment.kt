@@ -18,11 +18,15 @@ class HomeFragment : androidx.fragment.app.Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_home, container, false)
         setHasOptionsMenu(true)
+
         val tabLayout = view.findViewById<TabLayout>(R.id.tabs)
         val viewPager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.viewpager)
         val adapter = SectionPagerAdapter(childFragmentManager)
+
+        //add fragments to viewpager
         adapter.addFragment(MoviesFragment.newInstance(),"movies")
-        adapter.addFragment(TvShowsFragment.newInstance(),"tvshow11")
+        adapter.addFragment(TvShowsFragment.newInstance(),"tvshows")
+
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
         return view

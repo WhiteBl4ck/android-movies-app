@@ -12,6 +12,7 @@ import com.rubicon.whiteeblack.movieapp.utils.API_KEY
 
 class MovieRepository private constructor(private val apiService: ApiService) {
 
+
     val liveDataMovies = MutableLiveData<TopRatedMoviesResponse>()
     val liveDataSearchMovies = MutableLiveData<TopRatedMoviesResponse>()
     fun getTopRatedMovies() : LiveData<TopRatedMoviesResponse>
