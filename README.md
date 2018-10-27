@@ -12,6 +12,15 @@ Modify the file `grandle.properties` with the value of your API Key.
 Screenshots
 -----------
 
+| 
+<img width="250" height="444" src="screenshots/44866117_533216567144278_6790503660464898048_n.jpg"> |
+<img width="250" height="444" src="screenshots/44868738_1919546688128472_1686047651801333760_n.jpg"> | 
+<img width="250" height="444" src="screenshots/44878510_113462572898084_1218218132926103552_n.jpg"> | 
+<img width="250" height="444" src="screenshots/44882451_342626786505278_5814282135527227392_n.jpg"> |
+| :---: | :---: | :---: | :---: |
+| Popular | Top Rated | Search | Movie Details |
+
+
 
 Libraries Used
 --------------
