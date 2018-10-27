@@ -4,17 +4,23 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/movie_nav_graph"
             app:startDestination="@id/homeFragment">
 
-    <fragment android:id="@+id/homeFragment" android:name="com.rubicon.whiteeblack.movieapp.HomeFragment"
+    <fragment android:id="@+id/homeFragment" android:name="com.rubicon.whiteeblack.movieapp.ui.main.HomeFragment"
               android:label="Movie" tools:layout="@layout/fragment_home">
         <action android:id="@+id/action_homeFragment_to_detailFragment" app:destination="@id/detailFragment"/>
     </fragment>
-    <fragment android:id="@+id/moviesFragment" android:name="com.rubicon.whiteeblack.movieapp.MoviesFragment"
+    <fragment android:id="@+id/moviesFragment" android:name="com.rubicon.whiteeblack.movieapp.ui.movies.MoviesFragment"
               android:label="MoviesFragment">
     </fragment>
-    <fragment android:id="@+id/detailFragment" android:name="com.rubicon.whiteeblack.movieapp.DetailFragment"
+    <fragment android:id="@+id/detailFragment" android:name="com.rubicon.whiteeblack.movieapp.ui.detail.DetailFragment"
               android:label="DetailFragment">
         <argument app:argType="string" android:name="title"/>
         <argument android:name="imageUrl" app:argType="string"/>
         <argument android:name="description" app:argType="string"/>
     </fragment>
+    <fragment android:id="@+id/searchTvShowFragment"
+              android:name="com.rubicon.whiteeblack.movieapp.ui.searchtvshows.SearchTvShowsFragment"
+              tools:layout="@layout/search_tvshows_fragment"/>
+    <fragment android:id="@+id/searchMoviesFragment"
+              android:name="com.rubicon.whiteeblack.movieapp.ui.searchmovies.SearchMoviesFragment"
+              android:label="SearchMoviesFragment"/>
 </navigation>

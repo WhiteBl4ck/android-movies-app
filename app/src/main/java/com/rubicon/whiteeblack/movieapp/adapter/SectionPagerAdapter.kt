@@ -1,4 +1,4 @@
-package com.rubicon.whiteeblack.movieapp
+package com.rubicon.whiteeblack.movieapp.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

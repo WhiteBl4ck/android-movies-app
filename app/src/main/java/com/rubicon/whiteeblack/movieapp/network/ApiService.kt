@@ -16,6 +16,12 @@ interface ApiService {
     @GET("tv/top_rated")
     fun getTopRatedTvShows(@Query("api_key") apiKey: String): Call<TopRatedTvShowsResponse>
 
+    @GET("search/tv")
+    fun searchTvShows(@Query("api_key") apiKey: String,@Query("query") query: String): Call<TopRatedTvShowsResponse>
+
+    @GET("search/movie")
+    fun searchMovies(@Query("api_key") apiKey: String,@Query("query") query: String): Call<TopRatedMoviesResponse>
+
     companion object {
         fun create(): ApiService {
             val retrofit = Retrofit.Builder()

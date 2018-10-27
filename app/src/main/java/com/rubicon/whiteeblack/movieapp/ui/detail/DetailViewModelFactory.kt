@@ -1,4 +1,4 @@
-package com.rubicon.whiteeblack.movieapp.viewmodels
+package com.rubicon.whiteeblack.movieapp.ui.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +12,6 @@ class DetailViewModelFactory(
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return DetailViewModel(title,imageUrl,description) as T
+        return DetailViewModel(title, imageUrl, description) as T
     }
 }

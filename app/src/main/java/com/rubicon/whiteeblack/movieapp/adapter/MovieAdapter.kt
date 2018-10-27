@@ -9,9 +9,11 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.rubicon.whiteeblack.movieapp.HomeFragmentDirections
 import com.rubicon.whiteeblack.movieapp.R
+import com.rubicon.whiteeblack.movieapp.adapter.diffcallbacks.MovieDiffCallback
 import com.rubicon.whiteeblack.movieapp.model.Movie
+import com.rubicon.whiteeblack.movieapp.ui.detail.DetailFragment
+import com.rubicon.whiteeblack.movieapp.ui.main.HomeFragmentDirections
 import com.rubicon.whiteeblack.movieapp.utils.buildImageUrlFromPosterPath
 
 class MovieAdapter : ListAdapter<Movie, MovieAdapter.MovieHolder>(MovieDiffCallback()) {
@@ -34,15 +36,15 @@ class MovieAdapter : ListAdapter<Movie, MovieAdapter.MovieHolder>(MovieDiffCallb
         // open detailfragment on click
         private fun createOnClickListener(title :String,imageUrl : String, description : String): View.OnClickListener {
             return View.OnClickListener {
-                val direction = HomeFragmentDirections.actionHomeFragmentToDetailFragment(title,imageUrl,description)
-                it.findNavController().navigate(direction)
+                val arguments = DetailFragment.setFragmentArguments(title,imageUrl,description)
+                it.findNavController().navigate(R.id.detailFragment,arguments)
             }
         }
 
         fun bind(item : Movie)
         {
             val title = item.title
-            val imageUrl = buildImageUrlFromPosterPath(item.posterPath)
+            val imageUrl = buildImageUrlFromPosterPath(item.posterPath ?: "")
             val description = item.overview
 
             // update UI

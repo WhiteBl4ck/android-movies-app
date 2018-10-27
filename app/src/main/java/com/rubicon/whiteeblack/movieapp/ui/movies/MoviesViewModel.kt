@@ -1,10 +1,10 @@
-package com.rubicon.whiteeblack.movieapp.viewmodels
+package com.rubicon.whiteeblack.movieapp.ui.movies
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel
 import com.rubicon.whiteeblack.movieapp.repository.MovieRepository
 import com.rubicon.whiteeblack.movieapp.model.TopRatedMoviesResponse
 
 class MoviesViewModel(private val repository: MovieRepository) : ViewModel() {
-    val topRatedMoviesResponse : LiveData<TopRatedMoviesResponse> = repository.getTopRatedMovies()
+    fun topRatedMoviesResponse() : LiveData<TopRatedMoviesResponse> = repository.getTopRatedMovies()
 }

@@ -1,4 +1,4 @@
-package com.rubicon.whiteeblack.movieapp.adapter
+package com.rubicon.whiteeblack.movieapp.adapter.diffcallbacks
 
 import androidx.recyclerview.widget.DiffUtil
 import com.rubicon.whiteeblack.movieapp.model.TvShow

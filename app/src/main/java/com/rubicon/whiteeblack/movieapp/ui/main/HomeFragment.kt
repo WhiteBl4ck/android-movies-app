@@ -1,16 +1,13 @@
-package com.rubicon.whiteeblack.movieapp
+package com.rubicon.whiteeblack.movieapp.ui.main
 
 
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
-import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import android.view.*
-import android.widget.TableLayout
-
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.rubicon.whiteeblack.movieapp.R
+import com.rubicon.whiteeblack.movieapp.adapter.SectionPagerAdapter
+import com.rubicon.whiteeblack.movieapp.ui.movies.MoviesFragment
+import com.rubicon.whiteeblack.movieapp.ui.tvshows.TvShowsFragment
 
 class HomeFragment : androidx.fragment.app.Fragment() {
 
@@ -29,9 +26,5 @@ class HomeFragment : androidx.fragment.app.Fragment() {
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
         return view
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater?.inflate(R.menu.menu_main2,menu)
     }
 }

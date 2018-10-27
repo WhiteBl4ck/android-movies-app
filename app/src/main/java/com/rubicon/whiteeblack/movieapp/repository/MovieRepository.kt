@@ -12,20 +12,36 @@ import com.rubicon.whiteeblack.movieapp.utils.API_KEY
 
 class MovieRepository private constructor(private val apiService: ApiService) {
 
+    val liveDataMovies = MutableLiveData<TopRatedMoviesResponse>()
+    val liveDataSearchMovies = MutableLiveData<TopRatedMoviesResponse>()
     fun getTopRatedMovies() : LiveData<TopRatedMoviesResponse>
     {
-        val data = MutableLiveData<TopRatedMoviesResponse>()
         apiService.getTopRated(API_KEY).enqueue(object : Callback<TopRatedMoviesResponse>{
             override fun onFailure(call: Call<TopRatedMoviesResponse>, t: Throwable) {
                 // TODO handle failure and status
             }
             override fun onResponse(call: Call<TopRatedMoviesResponse>, response: Response<TopRatedMoviesResponse>) {
-                data.value = response.body()
+                liveDataMovies.value = response.body()
             }
 
         })
-        return data
+        return liveDataMovies
     }
+
+    fun searchMovies(query : String) : LiveData<TopRatedMoviesResponse>
+    {
+        apiService.searchMovies(API_KEY,query).enqueue(object : Callback<TopRatedMoviesResponse>{
+            override fun onFailure(call: Call<TopRatedMoviesResponse>, t: Throwable) {
+            }
+            override fun onResponse(call: Call<TopRatedMoviesResponse>, response: Response<TopRatedMoviesResponse>) {
+                liveDataSearchMovies.value = response.body()
+            }
+
+        })
+        return liveDataSearchMovies
+    }
+
+
     companion object {
         // For Singleton instantiation
         @Volatile private var instance: MovieRepository? = null
