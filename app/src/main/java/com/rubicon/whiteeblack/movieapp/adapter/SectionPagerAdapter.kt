@@ -1,15 +1,10 @@
 package com.rubicon.whiteeblack.movieapp.adapter
 
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-
 
 class SectionPagerAdapter(fm: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentPagerAdapter(fm) {
 
-    var mFragmentManager = fm
-    var mFragmentItems : ArrayList<androidx.fragment.app.Fragment> = ArrayList()
-    var mFragmenTitles : ArrayList<String> = ArrayList()
+    private var mFragmentItems : ArrayList<androidx.fragment.app.Fragment> = ArrayList()
+    private var mFragmenTitles : ArrayList<String> = ArrayList()
 
     fun addFragment(fragment: androidx.fragment.app.Fragment, title : String)
     {

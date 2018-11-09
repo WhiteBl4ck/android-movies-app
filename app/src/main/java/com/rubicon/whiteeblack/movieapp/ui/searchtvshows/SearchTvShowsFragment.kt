@@ -15,7 +15,6 @@ import com.rubicon.whiteeblack.movieapp.utils.InjectorUtils
 class SearchTvShowsFragment : Fragment() {
 
     companion object {
-        fun newInstance() = SearchTvShowsFragment()
     }
 
     private lateinit var viewModel: SearchTvShowsViewModel

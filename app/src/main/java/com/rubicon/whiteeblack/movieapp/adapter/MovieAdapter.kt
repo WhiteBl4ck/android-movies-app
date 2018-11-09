@@ -1,5 +1,7 @@
 package com.rubicon.whiteeblack.movieapp.adapter
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +11,11 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.request.RequestOptions
 import com.rubicon.whiteeblack.movieapp.R
 import com.rubicon.whiteeblack.movieapp.adapter.diffcallbacks.MovieDiffCallback
 import com.rubicon.whiteeblack.movieapp.model.Movie
 import com.rubicon.whiteeblack.movieapp.ui.detail.DetailFragment
-import com.rubicon.whiteeblack.movieapp.ui.main.HomeFragmentDirections
 import com.rubicon.whiteeblack.movieapp.utils.buildImageUrlFromPosterPath
 
 class MovieAdapter : ListAdapter<Movie, MovieAdapter.MovieHolder>(MovieDiffCallback()) {
@@ -52,6 +54,7 @@ class MovieAdapter : ListAdapter<Movie, MovieAdapter.MovieHolder>(MovieDiffCallb
             Glide.with(imageView.context)
                     .load(imageUrl)
                     .transition(DrawableTransitionOptions.withCrossFade())
+                    .apply(RequestOptions().error(ColorDrawable(Color.RED)).placeholder(ColorDrawable(Color.RED)))
                     .into(imageView)
             // create on click listener with Movie Detail Information
             itemView.setOnClickListener(createOnClickListener(title,imageUrl,description))

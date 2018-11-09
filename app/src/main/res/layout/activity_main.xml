@@ -8,13 +8,11 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:theme="@style/AppTheme"
             android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
-                android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"

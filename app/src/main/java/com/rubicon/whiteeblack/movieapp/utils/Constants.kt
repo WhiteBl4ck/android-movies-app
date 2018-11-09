@@ -1,8 +1,8 @@
 package com.rubicon.whiteeblack.movieapp.utils
 
-import com.rubicon.whiteeblack.movieapp.BuildConfig
 
-const val API_KEY = BuildConfig.ApiKey
+// API KEY
+const val API_KEY = "47343a235b371c873f47baec4f6bc37c"
 
 
 // this is temporaty for testing purpose

@@ -19,6 +19,8 @@ class HomeFragment : androidx.fragment.app.Fragment() {
         val view =  inflater.inflate(R.layout.fragment_home, container, false)
         setHasOptionsMenu(true)
 
+
+        // set up viewpager with tabLayout
         val tabLayout = view.findViewById<TabLayout>(R.id.tabs)
         val viewPager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.viewpager)
         val adapter = SectionPagerAdapter(childFragmentManager)
@@ -29,6 +31,10 @@ class HomeFragment : androidx.fragment.app.Fragment() {
 
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
+
+        // show tvshows page on first enter
+        viewPager.currentItem = 1
+
         return view
     }
 }
